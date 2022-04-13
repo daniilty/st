@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "FiraCode Nerd Font:style=Retina:size=13:antialias=true:autohint=true";
-static int borderpx = 5;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -53,14 +53,14 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 5;
 static double maxlatency = 33;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 1000;
 
 /*
  * thickness of underline and bar cursors
@@ -91,7 +91,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -115,11 +115,9 @@ static const char *colorname[] = {
 	"#89DCEB",
 	"#D9E0EE",
 
-
-
-[256] = "#D9E0EE", /* default foreground colour */
-[257] = "#1E1E2E", /* default background colour */
-[258] = "#C3BAC6", /*575268*/
+  [256] = "#D9E0EE", /* default foreground colour */
+  [257] = "#1E1E2E", /* default background colour */
+  [258] = "#C3BAC6", /*575268*/
 
 };
 
@@ -145,7 +143,7 @@ static unsigned int defaultrcs = 258;
  * 7: blinking st cursor
  * 8: steady st cursor
  */
-static unsigned int cursorstyle = 1;
+static unsigned int cursorstyle = 3;
 static Rune stcursor = 0x2603; /* snowman ("☃") */
 
 /*
